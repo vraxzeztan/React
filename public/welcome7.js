@@ -11,7 +11,7 @@ var PagePic = React.createClass({
 var PageLink = React.createClass({
     render : function(){
         return (
-            <a href={'https://www.facebook.com/+ this.props.pagename'}>
+            <a href={'https://www.facebook.com/'+ this.props.pagename}>
             {this.props.pagename}
             </a>
         )
@@ -30,6 +30,6 @@ var Avatar = React.createClass({
 });
 
 ReactDOM.render(
-    <Avatar pagename='Machine Learning'></Avatar>,
+    <Avatar pagename='Engineering'></Avatar>,
     document.getElementById('app')
 )
