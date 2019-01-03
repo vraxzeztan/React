@@ -44,3 +44,21 @@ var WelcomeForm = React.createClass({
         )
     }
 })
+
+var WelcomeMain = React.createClass({
+    getDefaultProps: function(){
+        return {
+            city : 'Pune',
+            state : 'Maharashtra'
+        }
+    },
+    getInitialState: function(){
+        return {
+            city: this.props.city,
+            state = this.props.state
+        }
+    },
+    render : function(){
+
+    }
+})
