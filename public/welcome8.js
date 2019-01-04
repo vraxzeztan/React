@@ -27,6 +27,7 @@ var WelcomeForm = React.createClass({
             this.refs.state.value= '';
             updates.state = state;
         }
+        this.props.collectData(updates) 
     },
     render: function(){
         return (
@@ -55,10 +56,25 @@ var WelcomeMain = React.createClass({
     getInitialState: function(){
         return {
             city: this.props.city,
-            state = this.props.state
+            state : this.props.state
         }
     },
+    changeState : function(updates){
+        this.setState(updates)
+    },
     render : function(){
-
+        var city = this.state.city;
+        var state = this.state.state;
+        return (
+            <div>
+                <WelcomeMessage city={city} state={state} />
+                <WelcomeForm collectData={this.changeState}/>
+            </div>
+        )
     }
-})
+});
+
+ReactDOM.render(
+    <WelcomeMain city='Mumbai'/>,
+    document.getElementById('app')
+)
